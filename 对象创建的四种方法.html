@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象创建的四种方法</title>
+</head>
+<body>
+	<script>
+		
+	// 1.
+	// var person = {
+	// 	name : 'zs',
+	// 	age : 18,
+	// 	sex : 'nan',
+	// 	color : 'pink',
+
+	// 	skill :	function() {
+	// 		console.log('he!');
+	// 	}
+	// }
+	// console.log(person);
+	// person.skill();
+
+
+	//2.new Object()
+	// var person = new Object();
+	// person.name	= 'zs';
+	// person.age = 18;
+	// person.sex = 'nan';
+	// person.color = 'pink';
+	// person.skill = function() {
+	// 	console.log('he!');
+	// }
+	// console.log(person);
+	// person.skill();
+
+
+	// 3.工厂方法
+	// function createPerson(name,age,sex,color,skill) {
+	// 	var person = new Object();
+	// 	person.name	= name;
+	// 	person.age = age;
+	// 	person.sex = sex;
+	// 	person.color = color;
+	// 	person.skill = function() {
+	// 		console.log('he!');
+	// 	}
+	// 	return person;
+	// }
+	// var person = createPerson('zs',18,'nan','pink','skill'); 	
+	// console.log(person);
+	// person.skill();
+
+
+	// 4.自定义构造函数
+	// function Person(name,age,sex,color,skill) {
+	// 	this.name = name;
+	// 	this.age = age;
+	// 	this.sex = sex;
+	// 	this.color = color;
+	// 	this.skill = function() {
+	// 		console.log('he!');
+	// 	}
+	// }
+	// var person = new Person('zs',18,'nan','pink','skill');
+	// console.log(person);
+	// person.skill();
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数据在内存中的存储方式</title>
+</head>
+<body>
+	<script>
+
+
+	// //基本数据类型作为函数的参数
+	// 	var x = 5 ,  y = 6;
+	// 	f1(x,y);
+	// 	function f1(a,b) { //这一步时在栈中申请a空间，存储数据5，之后申请b空间，存储数据6
+	// 		a=a+1;
+	// 		b=b+1;
+	// 		console.log(a);
+	// 		console.log(b);
+	// 	}//在函数调用结束后a，b空间被释放
+
+
+	// 复杂数据类型在内存中的存储
+	//创建构造函数
+	// 	function Person(name,age,salary) {
+	//   this.name = name;
+	//   this.age = age;
+	//   this.salary = salary;
+	// }
+	// // 声明对象p
+	// 	var p = new Person('zs',18,1000);
+	// 	console.log(p);
+	// 	var p1 = p;
+	// 	p1.name=154;
+	// 	console.log(p);
+
+//复杂数据类型被创建时，才在堆当中创建一片空间，存放数据。而复杂数据的名字只是指针，存放在栈当中，当p1 = p这种赋值情况出现时，只是将p所指向的地址赋予了p1，在所有的位置使用指针对复杂数据的值进行修改，都生效。
+	// function Person(name,age,salary) {
+	//   this.name = name;
+	//   this.age = age;
+	//   this.salary = salary;
+	// }
+	// function f1(person) {
+	//   person.name = "ls";
+	//   person = new Person("aa",18,10);
+	//   console.log(person);
+	// }
+
+	// var p = new Person("zs",18,1000);
+	// console.log(p.name);
+	// f1(p);
+	// console.log(p.name);
+
+
+
+	//1.
+	// var num1 = 10;
+	// var num2 = num1;
+	// num1 = 20;
+	// console.log(num1);
+	// console.log(num2);
+	
+	// 20 10
+	
+	
+	
+	//2. 
+	// var num = 50;
+	// function f1(num) {
+	//     num = 60;
+	//     console.log(num);
+	// }
+	// f1(num);
+	// console.log(num);
+	
+	// 60 50
+	
+	
+	
+	//3. 
+	// var num1 = 55;
+	// var num2 = 66;
+	// function f1(num, num1) {
+	//   num = 100;
+	//   num1 = 100;
+	//   num2 = 100;
+	//   console.log(num);
+	//   console.log(num1);
+	//   console.log(num2);
+	// }
+	// console.log(num);
+	// f1(num1, num2);
+	// console.log(num1);
+	// console.log(num2);
+	
+	
+	//100 100 100 55 66 报错num未定义
+	
+	
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

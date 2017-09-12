@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math对象</title>
+</head>
+<body>
+	<script>
+
+	//常用静态成员
+		// Math.PI						// 圆周率
+		// Math.random()				// 生成随机数
+		// Math.floor()/Math.ceil()	 // 向下取整/向上取整
+		// Math.round()				// 取整，四舍五入
+		// Math.abs()					// 绝对值
+		// Math.max()/Math.min()		 // 求最大和最小值
+		// Math.sin()/Math.cos()		 // 正弦/余弦
+		// Math.pow()/Math.sqrt()	 // 求指数次幂/求平方根
+
+
+		//Math.random()的常用参数
+		// 0-1的随机数
+		// Math.random();
+		// 10-20的随机数 不包括20
+		// Math.random()*(max-min)+min
+		// 10-20的随机数 包括20
+		// Math.random() * (max - min + 1)+min
+		// 10-20的随机数 包括20  的整数
+		// return Math.floor(Math.random() * (max - min + 1)) + min;
+
+
+
+		// - 求10 - 20之间的随机数(包括20的整数)
+		//创建函数，用Math.random生成随机值
+		// 将Math.random的值的范围进行调整
+
+		function getRandom(min,max) {
+			return parseInt(Math.random()*(max-min+1)+min);
+
+			// return Math.random()*(max-min+1)+min;//会取到大于max的数，所以Math.random() * (max - min + 1)+min只用来获得整数的随机数
+			// return Math.random()*(max-min)+min;
+		}
+		// console.log(getRandom(10,20));
+
+
+		//输入的最大值最小值不为整数的处理方法
+		// function getRandomIntInclusive(min, max) {
+		//   min = Math.ceil(min);
+		//   max = Math.floor(max);
+		//   return Math.floor(Math.random() * (max - min + 1)) + min;
+		// }
+
+
+		// 几种取整的方法
+		// Math.floor()/Math.ceil()	 // 向下取整/向上取整
+		// Math.floor(23.5) 23
+		// Math.floor(24.0) 24
+
+		// Math.round()				// 取整，四舍五入
+		// Math.round(23.5)	24
+		// Math.round(23.4)	23
+
+		// parseInt		舍弃小数部分
+
+
+
+		setInterval(function(){
+		    // 1.通过getRandom方法获取三元色的色值
+		    var r = getRandom(0,255);
+		    var g = getRandom(0,255);
+		    var b = getRandom(0,255);
+		    // 获取body(通过标签名来获取body)
+		    var oBody = document.getElementsByTagName('body')[0];
+		    // console.log(oBody); 
+		    // 获取body,给body的样式添加一个背景色 是红色
+		    // oBody.style.backgroundColor = 'rgb(255,0,0)';
+		    oBody.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
+		 },1000)
+		
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
