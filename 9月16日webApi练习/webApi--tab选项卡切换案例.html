@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			div {
+				width: 350px;
+				height: 200px;
+				text-align: center;
+				line-height: 200px;
+				font-size: 50px;
+				display: none;
+				background-color: orange;
+			}
+			input {
+				width: 80px;
+				height: 30px;
+				font: 15px/30px "微软雅黑";
+				background-color: paleturquoise;
+				border:none;
+				outline: none;
+				cursor: pointer;
+			}
+			.active {
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="袜子" class="active" />
+		<input type="button" value="牛仔裤" />
+		<input type="button" value="连衣裙" />
+		<input type="button" value="鞋" />
+		<div style="display: block;">白色长袜子</div>
+		<div>lee牛仔裤</div>
+		<div>时尚连衣裙</div>
+		<div>女式高跟鞋</div>
+	</body>
+	<script type="text/javascript">
+		// 分析思路： 1  单击任何一个按钮 应该将 当前单击的这个按钮加上一个类 active
+		//        2单击任何一个按钮  将当前的单击的这个按钮所对应的那个div显示出来
+		//			让别的div都隐藏
+	
+
+var	aInp = document.getElementsByTagName('input');
+var aDiv = document.getElementsByTagName('div');
+
+for (var i = 0; i < aInp.length; i++) {
+	 aInp[i].abc=i;
+	aInp[i].onclick=function () {
+		for (var i = 0; i < aInp.length; i++) {
+			aInp[i].className= '';
+			aDiv[i].style.display='none';
+		}
+		this.className='active';
+		aDiv[this.abc].style.display='block';
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		// // 1 获取元素
+		// var aInp = document.getElementsByTagName("input");
+		// var aDiv = document.getElementsByTagName("div");
+		
+		// // 2 给所有的按钮都注册添加单击事件 
+		// for(var i = 0; i < aInp.length; i++) {
+		// 	// 0 1 2
+		// 	// 添加自定义属性的方式解决
+		// 	// 将每一个按钮的索引 存起来 存给它自身的一个自定义的属性
+		// 	aInp[i].index = i;// aInp[0].abc = 0; aInp[1].abc =1;aInp[2].abc =2
+			
+		// 	aInp[i].onmouseover = fn;
+			
+		// }
+		
+		// function fn() {
+		// 		// 暴力清除 让所有的按钮都去掉类
+		// 		// 所有的div全部隐藏
+		// 		for(var j = 0; j < aInp.length; j++) {
+		// 			aInp[j].className = "";
+		// 			aDiv[j].style.display = "none";
+		// 		}
+				
+		// 		// 给当前单击的按钮添加上一个类 
+		// 		this.className = "active";
+		// 		// 让当前的按钮 对应的那个div 显示出来
+		// 		console.log(i); // 3  // 0 1 2
+				
+		// 		console.log(this.index)
+				
+		// 		aDiv[this.index].style.display = "block";
+		// 	}
+	</script>
+</html>
