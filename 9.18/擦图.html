@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{
+		height: 75px;
+		width: 98px;
+		background: url(./123.png);
+		position: absolute;
+		opacity: 0;
+		transition: 0.5s;
+
+	}
+	</style>
+</head>
+<body>
+	
+</body>
+
+<script>
+	var str='';
+	for (var i = 0; i < 100; i++) {
+		var L=i%10*99;
+		var T=parseInt(i/10)*76;
+
+		var L1=i%10*98;
+		var T1=parseInt(i/10)*75;
+
+
+
+		str+='<div class="box" style="left:'+L+'px; top:'+T+'px; background-position:'+-L1+'px '+-T1+'px "></div>';
+	}
+
+	document.body.innerHTML= str;
+
+	var aDiv= document.getElementsByTagName('div');
+	for (var i = 0; i < aDiv.length; i++) {
+		aDiv[i].onmouseover=function () {
+			this.style.opacity=1;
+		}
+	}
+
+</script>
+
+</html>
