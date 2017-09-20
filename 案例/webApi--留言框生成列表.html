@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#oUl {
+				width: 300px;
+				height: 200px;
+				border: 1px solid black;
+			}
+			ul{
+				list-style: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul id="oUl">
+			<!--<li>这是你说的话</li>-->
+		</ul>
+		<span id="person">小明: </span><input type="text" id="text1" />
+		<input type="button" value="发送" id="btn" />
+	</body>
+	<script src="myTools.js"></script>
+	<script type="text/javascript">
+//获取元素
+var oUl=$('#oUl');
+var oPerson=$('#person');
+var oText1=$('#text1');
+var oBtn=$('#btn');
+
+//当点击姓名时，切换用户
+oPerson.onclick=function(){
+	if (this.innerHTML=="小明: ") {
+		this.innerHTML='小红: ';
+	} else {
+		this.innerHTML="小明: ";
+	}
+}
+
+//当点击发送时，文本框中的内容，输送到界面当中。
+oBtn.onclick=function(){
+	var str='<li>'+oPerson.innerHTML+oText1.value+'</li>';
+	if (oPerson.innerHTML=='小红: '){
+		str='<li style="float:right">'+oText1.value+': 小红'+'</li>'+'</br>';
+	}
+	oUl.innerHTML=str+oUl.innerHTML;
+	oText1.value='';
+	oText1.foucus();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// var oUl=$('#oUl');
+	// var oPerson=$('#person');
+	// var oText1=$('#text1');
+	// var oBtn=$('#btn');
+
+	// oPerson.onclick=function () {
+	// 	if (this.innerHTML=='小红: ') {
+	// 		this.innerHTML='小明: ';
+	// 	}else{
+	// 		this.innerHTML='小红: ';
+	// 	}	
+	// }
+	// oBtn.onclick=function () {
+	// 	var str='';
+	// 	var newLi=document.createElement('li');
+	// 	if (oPerson.innerHTML=='小明: '){
+	// 		str+="<li style='float:left;'>"+oPerson.innerHTML+oText1.value+"</li>"+"<br/>";
+	// 	}else{
+	// 		str+="<li style='float:right;'>"+oText1.value+": 小红"+"</li>"+"<br/>";
+	// 	}
+	// 	console.log(str);
+	// 	newLi.innerHTML=str;
+	// 	console.log(newLi)
+	// 	oUl.appendChild(newLi);
+
+	// 	oText1.value　=　"";
+	// 	oText1.focus();
+	// 	}
+
+
+	</script>
+</html>

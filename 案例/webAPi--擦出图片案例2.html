@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 98px;
+				height: 75px;
+				background:url(./123.png) no-repeat;
+				position: absolute;
+				opacity: 0;
+				transition: 0.5s;
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+var str='';
+for (var i = 0; i < 100; i++) {
+	var l=i%10*99;
+	var t=parseInt(i/10)*76;
+	var l1=i%10*98;
+	var t1=parseInt(i/10)*75;
+	str+='<div class="box" style="left:'+l+'px; top:'+t+'px; background-position:'+-l1+'px '+-t1+'px;"></div>'
+}
+document.body.innerHTML=str;
+var aBox=document.getElementsByTagName('div');
+for (var i = 0; i < aBox.length; i++) {
+	aBox[i].onmouseover=function () {
+		this.style.opacity=1;
+	}
+}
+	</script>
+</html>
+ 

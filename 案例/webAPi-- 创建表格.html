@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div>
+			姓名：<input id="nameText" type="text"><br> 年龄：
+			<input id="ageText" type="text">
+			<input type="button" value="添加学生">
+			<input type="button" value="删除一行">
+		</div>
+		<table id="stuInfo" width="200" border="1">
+			<tbody>
+				<tr>
+					<td>姓名</td>
+					<td>年龄</td>
+				</tr>
+				<tr>
+					<td>江泽民</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>芙蓉</td>
+					<td>30</td>
+				</tr>
+				<tr>
+					<td>凤姐</td>
+					<td>28</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+	<script src="myTools.js"></script>
+	<script type="text/javascript">
+
+var oName=$('#nameText');
+var oAge=$('#ageText');
+var aBtn=$('input');
+var oStuInfo=$('#stuInfo');
+var tBody=oStuInfo.children[0];
+setColor();
+
+function setColor() {
+	for (var i = 0; i < tBody.children.length; i++) {
+		if (i%2) {
+			tBody.children[i].style.backgroundColor='yellow';
+		} else {
+			tBody.children[i].style.backgroundColor='red';
+		}
+	}
+}
+
+aBtn[2].onclick=function() {
+	var addName=document.createElement('td');
+	addName.innerHTML=oName.value;
+	var addAge=document.createElement('td');
+	addAge.innerHTML=oAge.value;
+	var addTr=document.createElement('tr');
+
+	addTr.appendChild(addName);
+	addTr.appendChild(addAge);
+	tBody.appendChild(addTr);
+	setColor();
+}
+aBtn[3].onclick=function() {
+	if (first(tBody)!=last(tBody)) {
+		tBody.removeChild(last(tBody))
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //获取元素
+// var oName=$('#nameText');
+// var oAge=$('#ageText');
+// var aBtn=$('input');
+// var oStuInfo=$('#stuInfo');
+// var tbody=oStuInfo.children[0];
+
+// setColor();
+
+// // 设置变色函数
+// function setColor() {
+// 	for (var i = 0; i < tbody.children.length; i++) {
+// 		if (i%2) {
+// 			tbody.children[i].style.backgroundColor='yellow';
+// 		}else{
+// 			tbody.children[i].style.backgroundColor='red';
+// 		}
+// 	}
+// }
+
+
+// // 设置点击事件
+// aBtn[2].onclick=function () {
+// 	//创建两个td构造 一个tr构造
+// var addName=document.createElement('td');
+// addName.innerHTML=oName.value;
+// var addAge=document.createElement('td');
+// addAge.innerHTML=oAge.value;
+// var addTr=document.createElement('tr');
+
+// //将两个td插入到tr，将tr插入到tbody
+// addTr.appendChild(addName);
+// addTr.appendChild(addAge);
+
+// tbody.appendChild(addTr);
+// setColor();
+// }
+
+// //删除最后一行
+// aBtn[3].onclick=function() {
+// 	if (last(tbody)!=first(tbody)) {
+// 		tbody.removeChild(last(tbody));
+// 	}
+// }
+
+
+
+	</script>
+
+</html>

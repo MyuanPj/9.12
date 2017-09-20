@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 98px;
+				height: 75px;
+				background:url(./123.png) no-repeat;
+				position: absolute;
+				opacity: 0;
+				transition: 0.5s;
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+
+	//先来100个盒子
+	var str='';
+		for (var i = 0; i < 100; i++) {
+			var l=i%10*98;
+			var b=parseInt(i/10)*75;
+			var l1=i%10*99;
+			var b1=parseInt(i/10)*76;
+			str+='<div class="box" style="left: '+l1+'px; top: '+b1+'px; background-position: '+-l+'px '+-b+'px;"></div>';
+		}
+		document.body.innerHTML = str;
+
+		var oBox=document.getElementsByTagName('div');
+
+	for (var i = 0; i < oBox.length; i++) {
+		oBox[i].onmouseover=function () {
+			this.style.opacity="1";
+		}
+	}
+	</script>
+</html>
+ 
