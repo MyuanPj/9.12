@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="单击跳转" />
+		
+	</body>
+	<script type="text/javascript">
+		//console.log(window.location);
+		var urlStr = "http:// www.baidu.com:80/login/login.php?username=zhangsan&age=26&password=1234";
+		// {
+//			username:"zhangsan",
+//			age : 26,
+//			password: 123456
+//		}
+		//将字符串从？号之后的字符变成
+		// {
+//			username:"zhangsan",
+//			age : 26,
+//			password: 123456
+//		}形式
+
+		//定义空对象
+		var obj = {}
+
+		//定义字符串，将？号之后的字符存储在内
+
+		// var data=urlStr.split("?");
+		// console.log(data); 这样子得到一个有两个元素的数组，里面存储的字符串
+
+		//另一种方法，先找到？的位置
+
+		var idx=urlStr.indexOf('?');
+		console.log(idx);
+
+		//截取从?之后的字符
+
+		var data=urlStr.substring(idx+1)
+		console.log(urlStr);
+		console.log(data);
+
+		//用&将他们分割开;
+		var arrData=data.split('&');
+		console.log(arrData);
+
+		//将每个数组中的字符串用=分割
+
+		for (var i = 0; i < arrData.length; i++) {
+			var smallArr=arrData[i].split('=');
+			console.log(smallArr);
+
+			// 将被=分割的字符串设为obj的属性
+			obj[smallArr[0]]=smallArr[1];
+
+		}
+		console.log(obj);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// console.log( query(urlStr) );
+		
+		// function query(str) {
+		// 	// 建立一个空对象 用来存url地址中的参数
+		// 	var obj = {};
+			
+		// 	var idx = str.indexOf("?");
+		// 	console.log('indexof:' +idx);
+		
+		// 	var data = str.substring(idx+1);
+		// 	console.log('str.substring:' +data);
+
+		// 	//"username=zhangsan    &   age=26   &    password=1234"
+		// 	console.log(data);
+		// 	var arrData = data.split("&");
+		// 	console.log(arrData);
+		// 	//  ["username=zhangsan", "age=26", "password=1234"]
+		// 	for(var i = 0; i < arrData.length; i++) {
+				
+		// 		var  smallArr  = arrData[i].split("=");// ["username","zhangsan"]
+				
+		// 		obj[smallArr[0]] = smallArr[1]; // { "username":"zhangsan"}
+				
+		// 	}
+		// 	return obj;
+		// }
+		
+		
+		// var oBtn = document.getElementsByTagName("input")[0];
+		
+		// oBtn.onclick = function() {
+		// 	location.href = "http://www.163.com";
+		// }
+		
+	</script>
+</html>
