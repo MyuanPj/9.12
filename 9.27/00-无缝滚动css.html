@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>无标题文档</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid red;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        #arr {
+            display: block;
+        }
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!--外盒子-->
+    <div class="all" id='all'>
+        <!--内盒子-->
+        <div class="screen" id="screen">
+            <ul id="ul">
+                <li><img src="images/1.jpg" width="500" height="200"/></li>
+                <li><img src="images/2.jpg" width="500" height="200"/></li>
+                <li><img src="images/3.jpg" width="500" height="200"/></li>
+                <li><img src="images/4.jpg" width="500" height="200"/></li>
+                <li><img src="images/5.jpg" width="500" height="200"/></li>
+                <li><img src="images/1.jpg" width="500" height="200"/></li>
+            </ul>
+            <!--小方块-->
+            <ol>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>	
+            </ol>
+            <!--左右小三角-->
+            <div id="arr">
+                <span id="left"><</span>
+                <span id="right">></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="myTools.js"></script>
+<script>
+    
+    var oUl = document.getElementById('ul');
+    var oAll = document.getElementById('all');
+    var oScreen = document.getElementById('screen');
+    var oLeft = document.getElementById('left');
+    var oRight = document.getElementById('right');
+    var oOl= document.getElementsByTagName('ol')[0];
+    
+    // var pos=0;
+    //     oOl.children[0].className='current';
+
+    // console.log(oUl.children.length-1);
+
+    // oRight.onclick=function () {
+        
+    //      if (pos==oUl.children.length-1) {
+
+    //         pos=0;
+    //         oUl.style.left= 0;
+    //     }
+
+    //     pos++;
+
+    //     var target=oUl.style.left
+    //     target= -pos*500;
+    //     move(oUl,'left',10,target,function(){
+           
+    //         if (pos==oUl.children.length-1) {
+    //             pos=0;
+    //             oUl.style.left= 0;
+    //         }
+
+    //         for (var i = 0; i < oOl.children.length; i++) {
+    //              oOl.children[i].className='';
+    //          }
+
+    //         oOl.children[pos].className='current';
+    //     });
+
+
+
+    // }
+
+    // oLeft.onclick=function () {
+    //     if (pos==0) {
+    //         pos=oUl.children.length-1;
+    //         oUl.style.left= -pos*500+'px';
+    //     }
+    //     pos--;
+    //     var target=oUl.style.left
+    //     target= -pos*500;
+    //     move(oUl,'left',10,target,function(){
+    //        for (var i = 0; i < oOl.children.length; i++) {
+    //              oOl.children[i].className='';
+    //          }
+    //         oOl.children[pos].className='current';  
+    //     });
+    // }
+
+    // var timer=null;
+    // timer=setInterval(right.onclick,2000);
+
+    // oScreen.onmouseover=function(){
+    //     clearInterval(timer);
+    // }
+    // oScreen.onmouseout=function(){
+    //     timer=setInterval(right.onclick,2000);
+    // }
+
+    // for (var i = 0; i < oOl.children.length; i++) {
+    //     oOl.children[i].index=i;
+    //     oOl.children[i].onmouseover=function(){
+    //         pos=this.index;
+    //          var target= -pos*500;
+    //          for (var i = 0; i < oOl.children.length; i++) {
+    //              oOl.children[i].className='';
+    //          }
+    //         oOl.children[pos].className='current';
+    //         move(oUl,'left',10,target);
+    //     }
+    // }   
+
+
+ var pos=0;
+ var square=0;
+    oOl.children[0].className='current';
+
+    console.log(oUl.children.length-1);
+
+    oRight.onclick=function () {
+        
+         if (pos==oUl.children.length-1) {
+
+            pos=0;
+            oUl.style.left= 0;
+        }
+
+        pos++;
+
+        var target=oUl.style.left
+        target= -pos*500;
+        move(oUl,'left',10,target);
+        if (square<oOl.children.length-1) {
+            square++;
+        } else {
+            square=0
+        }
+            for (var i = 0; i < oOl.children.length; i++) {
+                 oOl.children[i].className='';
+             }
+            oOl.children[square].className='current';  
+        
+    }
+
+    oLeft.onclick=function () {
+        if (pos==0) {
+            pos=oUl.children.length-1;
+            oUl.style.left= -pos*500+'px';
+        }
+        pos--;
+        if(square>0){
+                square--;
+            }else{
+                square = oOl.children.length-1;
+            }
+        var target=oUl.style.left
+        target= -pos*500;
+        move(oUl,'left',10,target,function(){
+            for (var i = 0; i < oOl.children.length; i++) {
+                 oOl.children[i].className='';
+             }
+            oOl.children[pos].className='current';  
+        });
+
+    }
+
+    var timer=null;
+    timer=setInterval(right.onclick,2000);
+
+    oScreen.onmouseover=function(){
+        clearInterval(timer);
+    }
+    oScreen.onmouseout=function(){
+        timer=setInterval(right.onclick,2000);
+    }
+
+    for (var i = 0; i < oOl.children.length; i++) {
+        oOl.children[i].index=i;
+        oOl.children[i].onmouseover=function(){
+            pos=this.index;
+            square=this.index;
+             var target= -pos*500;
+             for (var i = 0; i < oOl.children.length; i++) {
+                 oOl.children[i].className='';
+             }
+            oOl.children[square].className='current';
+            move(oUl,'left',10,target);
+        }
+    }   
+
+
+
+
+
+
+
+</script>
+</html>
+
+
+<!-- 预解析:
+
+
+        alert(a);       function a() {alert(3)}
+        var a;          
+        
+        alert(a);       function a() {alert(3)}
+        
+        function a() {
+          alert(1);
+        }
+        alert(a);       function a() {alert(3)}
+        var a = 2;
+        alert(a);           2
+        function a() {
+          alert(3);
+        }
+        alert(a);           2
+        function b() {
+          alert(4);
+        }
+        alert(a);           2
+ -->
