@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div div{
+		width: 280px;
+		height: 200px;
+		display: none;
+		border: 1px solid black;
+		font-size: 50px;
+		text-align: center;
+		line-height: 200px;
+	}
+	.active{
+		background: red;
+	}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<button class="active">按钮1</button>
+		<button class="">按钮2</button>
+		<button class="">按钮3</button>
+		<div style="display:block;">内容1</div>
+		<div>内容2</div>
+		<div>内容3</div>
+	</div>
+</body>
+<script>
+
+function Tab(id) {
+	this.parent = document.getElementById(id);
+	this.aBtn = this.parent.getElementsByTagName('button');
+	this.aDiv = this.parent.getElementsByTagName('div');
+	this.fn();
+}
+Tab.prototype.fn = function() {
+	var that = this;
+	for (var i = 0; i < this.aBtn.length; i++) {
+		this.aBtn[i].index = i;
+		this.aBtn[i].onclick = function(){
+			that.fnTab(this.index);
+		};
+	}
+}
+Tab.prototype.fnTab = function(idx) {
+	for (var i = 0; i < this.aBtn.length; i++) {
+		this.aBtn[i].className = '';
+		this.aDiv[i].style.display = 'none';
+	}
+	this.aBtn[idx].className = 'active';
+	this.aDiv[idx].style.display = 'block';
+}
+
+var box1 = new Tab('box');
+
+</script>
+</html>

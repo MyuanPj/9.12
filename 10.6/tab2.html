@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div div{
+		width: 280px;
+		height: 200px;
+		display: none;
+		border: 1px solid black;
+		font-size: 50px;
+		text-align: center;
+		line-height: 200px;
+	}
+	.active{
+		background: red;
+	}
+	</style>
+</head>
+<body>
+	<input type="button" value="box1开关" />
+	<input type="button" value="box2开关" />
+	<input type="button" value="两级反转" />
+	<div id="box">
+		<button class="active">按钮1</button>
+		<button>按钮2</button>
+		<button>按钮3</button>
+		<div style="display:block;">内容1</div>
+		<div>内容2</div>
+		<div>内容3</div>
+	</div>
+	<div id="box2">
+		<button class="active">按钮1</button>
+		<button>按钮2</button>
+		<button>按钮3</button>
+		<button>按钮4</button>
+		<div style="display:block;">内容1</div>
+		<div>内容2</div>
+		<div>内容3</div>
+		<div>内容4</div>
+	</div>
+</body>
+<script>
+
+function Tab(id) {
+	this.parent = document.getElementById(id);
+	this.aBtn = this.parent.getElementsByTagName('button');
+	this.aDiv = this.parent.getElementsByTagName('div');
+	this.timer = null;
+	this.num = 0;
+	this.onff = false;
+	this.fn();
+}
+Tab.prototype.fn = function() {
+	var that = this;
+	for (var i = 0; i < this.aBtn.length; i++) {
+		this.aBtn[i].index = i;
+		this.aBtn[i].onclick = function() {
+			that.fnTab(this.index);
+		};
+	};	
+};
+
+Tab.prototype.fnTab = function(idx) {
+	for (var i = 0; i < this.aBtn.length; i++) {
+		this.aBtn[i].className = '';
+		this.aDiv[i].style.display = 'none';
+	}
+	this.aBtn[idx].className = 'active';
+	this.aDiv[idx].style.display = 'block';
+	
+};
+
+Tab.prototype.autoplay = function() {
+	clearInterval(this.timer);
+	// this.timer = null;
+	this.onff = true;
+	var that = this;
+	this.timer = setInterval(function() {
+		that.num++;
+		if (that.num == that.aBtn.length) {
+			that.num = 0;
+		};
+		that.fnTab(that.num);
+	}, 1000);
+
+}
+Tab.prototype.stop = function() {
+	this.onff = false;
+	clearInterval(this.timer);
+	// this.timer = null;
+}
+
+
+var box1 = new Tab('box');
+box1.autoplay();
+var box2 = new Tab('box2');
+var aInp = document.getElementsByTagName('input');
+aInp[0].onclick = function() {
+	if (box1.onff==true) {
+		box1.stop();
+	} else {
+		box1.autoplay();
+	}
+	onff=!onff;
+}
+
+</script>
+</html>

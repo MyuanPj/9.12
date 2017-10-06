@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#box{
+		width: 100px;
+		height: 100px;
+		background: red;
+		position: absolute;
+		left: 100px;
+		top: 100px;
+	}
+	#box2{
+		width: 100px;
+		height: 100px;
+		background: blue;
+		position: absolute;
+		left: 200px;
+		top: 100px;
+	}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div id="box2"></div>
+</body>
+<script src="drag.js"></script>
+<script>
+
+
+var Drag1 = new Drag('box');
+var Drag2 = new Drag('box2');
+
+</script>
+</html>
