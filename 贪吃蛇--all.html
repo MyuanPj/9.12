@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#map{
+		width: 800px;
+		height: 600px;
+		background: #ccc;
+		/*border: 1px solid black;*/
+		margin: 0 auto;
+		position: relative;
+	}
+	</style>
+</head>
+<body>
+	<div id="map"></div>
+</body>
+<script>
+
+//food
+(function(window){
+	var oldFood =[]
+	function Food() {
+		this.width = 20;
+		this.height = 20;
+		this.x = 0;
+		this.y = 0;
+		this.color = 'green';
+	}
+	Food.prototype.render = function(map) {
+		if (oldFood[0]) {
+			remove();
+		}
+		var div = document.createElement('div');
+		div.style.position = 'absolute';
+		div.style.width = this.width +'px';
+		div.style.height = this.height + 'px';
+		this.x = parseInt(Math.random()*map.offsetWidth/this.width)*this.width;
+		this.y = parseInt(Math.random()*map.offsetHeight/this.height)*this.height;
+		div.style.left = this.x + 'px';
+		div.style.top = this.y + 'px';
+		div.style.background = this.color;
+		map.appendChild(div);
+		oldFood.push(div);
+	}
+	function remove() {
+		oldFood[0].parentNode.removeChild(oldFood[0]);
+		oldFood = [];
+	}
+	window.Food = Food;
+})(window);
+
+//snake
+(function(window){
+	var snakeEles = [];
+	function Snake() {
+		this.width = 20;
+		this.height = 20;
+		this.direction = 'right';
+		this.body = [
+			{x:3,y:2,color:'red'},
+			{x:2,y:2,color:'blue'},
+			{x:1,y:2,color:'blue'}
+		]
+	}
+	Snake.prototype.render = function(map) {
+		remove();
+		for (var i = 0; i < this.body.length; i++) {
+			var div = document.createElement('div');
+			div.style.position = 'absolute';
+			div.style.width = this.width +'px';
+			div.style.height = this.height + 'px';
+			div.style.left = this.body[i].x*this.width + 'px';
+			div.style.top = this.body[i].y*this.height + 'px';
+			div.style.background = this.body[i].color;
+			map.appendChild(div);
+			snakeEles.push(div);
+		}
+	}
+	Snake.prototype.move = function(map,food) {
+		for (var i = this.body.length-1; i>0; i--) {
+			this.body[i].x = this.body[i-1].x;
+			this.body[i].y = this.body[i-1].y;
+		}
+		switch(this.direction){
+			case 'left':
+			this.body[0].x -=1;
+			break;
+			case 'right':
+			this.body[0].x +=1;
+			break;
+			case 'top':
+			this.body[0].y -=1;
+			break;
+			case 'down':
+			this.body[0].y +=1;
+			break;
+		}
+
+		var headX = this.body[0].x*this.width;
+		var headY = this.body[0].y*this.height;
+		var foodX = food.x;
+		var foodY = food.y;
+		if (headX==foodX&&headY==foodY) {
+			var last = this.body[this.body.length-1];
+			var newJ = {
+				x:last.x,
+				y:last.y,
+				color:last.color
+			}
+			this.body.push(newJ);
+			food.render(map);
+		}
+	}
+	function remove() {
+		for (var i = 0; i < snakeEles.length; i++) {
+			snakeEles[i].parentNode.removeChild(snakeEles[i]);
+		}
+		snakeEles = [];
+	}
+	window.Snake = Snake;
+})(window);
+
+//game
+(function(window){
+	function Game(map) {
+		this.food = new Food;
+		this.snake = new Snake;
+		this.map = map;
+	}
+	Game.prototype.start = function() {
+		this.food.render(this.map);
+		this.snake.render(this.map);
+		snakego(this);
+		bind(this);
+	}
+	function snakego(that) {
+		var timer = setInterval(function(){
+			that.snake.move(that.map,that.food);
+			var headX = that.snake.body[0].x*that.snake.width;
+			var headY = that.snake.body[0].y*that.snake.height;
+			var maxX = map.offsetWidth;
+			var maxY = map.offsetHeight;
+			if (headX<0||headX>=maxX) {
+				clearInterval(timer);
+				alert('over');
+				return;
+			}
+			if (headY<0||headY>=maxY) {
+				clearInterval(timer);
+				alert('over');
+				return;
+			}
+			that.snake.render(map);
+		},200);
+	}
+	function bind(that) {
+		document.onkeydown = function(ev) {
+			ev = ev || event;
+			switch(ev.keyCode) {
+				case 37:
+				that.snake.direction = 'left';
+				break;
+				case 39:
+				that.snake.direction = 'right';
+				break;
+				case 38:
+				that.snake.direction = 'top';
+				break;
+				case 40:
+				that.snake.direction = 'down';
+				break;
+			}
+		}
+	}
+	window.Game = Game;
+})(window);
+
+
+
+
+
+var map = document.getElementById('map');
+var game = new Game(map);
+game.start();
+
+</script>
+</html>
