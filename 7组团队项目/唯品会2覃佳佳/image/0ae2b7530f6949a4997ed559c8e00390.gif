@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>您查看的页面找不到了_唯品会VIP特卖会：一家专门做特卖的网站</title>
+    <meta name="keywords" content=" 唯品会,VIP,打折,品牌折扣,限时抢购,特卖">
+    <meta name="description" content="唯品会VIP购物网以1-7折超低折扣对全球各大品牌进行限时特卖，商品囊括服装、化妆品、家居、奢侈品等上千品牌。100%正品、低价、货到付款、7天无条件退货">
+
+    <style>
+        * { margin:0;padding:0; }
+        h1, h2, h3, h4, h5, h6 { font-size:100%; }
+        a,
+        img { vertical-align:top; }
+        a { outline:none; }
+        a,
+        a:hover { text-decoration:none; }
+        body { font:12px/1.5 tahoma,arial,'Hiragino Sans GB','WenQuanYi Micro Hei','\5FAE\8F6F\96C5\9ED1','\5B8B\4F53',sans-serif;color:#333;-webkit-font-smoothing:antialiased;background-color:#fff; }
+        .c-error,
+        .tabs-brands { margin:50px auto;width:960px;}
+        .c-error { position:relative;z-index:1; }
+        .c-error-img { margin-right:auto;margin-left:auto;width:866px;height:371px;background:url("//a.vpimg2.com/upload/upimg2/error-page/sprites-404-20171009.png?20161215") no-repeat 0 0; }
+        .c-error-explain { position:absolute;top:150px;right:38px;z-index:1;}
+        .c-error-title { margin-bottom:10px;font-size:28px; }
+        .c-error-text { margin-bottom:10px;font-size:14px; }
+        .c-error-button { display:inline-block;padding-right:20px;padding-left:20px;line-height:32px;background-color:#f10180;color:#fff;font-size:15px;text-decoration:none;border-radius:3px; }
+        .c-error-button:hover { background-color:#f43499;text-decoration:none; }
+        .c-error-button:active { background-color:#d80173; }
+        .c-tabs-nav { margin-bottom:5px;height:34px;border-bottom:1px solid #d0d0d0;overflow:hidden; }
+        .c-tabs-title { display:inline-block;*display:inline;*zoom:1;position:relative;z-index:1;margin-right:20px;padding-right:10px;padding-left:10px;vertical-align:top;color:#666;line-height:34px;font-size:14px;cursor:pointer; }
+        .c-tabs-title:before { content:' ';position:absolute;width:1px;height:12px;background:#d0d0d0;left:-11px;top:50%;margin-top:-6px; }
+        .c-tabs-panel { display:none; }
+        .is-tabs-title-active,
+        .is-tabs-title-active:hover { padding-top:2px;z-index:2;color:#333;cursor:default;line-height:30px;border-bottom:3px solid #f10180; }
+        .is-tabs-panel-active { display: block; }
+        .tabs-brands { margin-top:40px; }
+        .tabs-brands .c-tabs-panel { padding-top:25px; }
+        .c-carousel { position:relative;z-index:1; }
+        .c-carousel-trigger-previous,
+        .c-carousel-trigger-next { position:absolute;z-index:2;cursor:default; }
+        .c-carousel-container { position:relative;z-index:1;overflow:hidden; }
+        .c-carousel-panels { *zoom:1;width:99999px; }
+        .c-carousel-panels:before,
+        .c-carousel-panels:after { display:table;content:' '; }
+        .c-carousel-panels:after { clear:both; }
+        .c-carousel-panel { display:inline;float:left; }
+        .c-carousel-trigger-previous,
+        .c-carousel-trigger-next { cursor:pointer; }
+        .is-carousel-trigger-previous-disabled { cursor:default; }
+        .carousel-goods .c-carousel-trigger-previous,
+        .carousel-goods .c-carousel-trigger-next { top:60px;width:28px;height:55px; }
+        .carousel-goods .c-carousel-trigger-previous { left:-8px;background-image:url("//a.vpimg2.com/upload/upimg2/error-page/sprites-404-20171009.png?20161215");background-position:0 -380px; }
+        .carousel-goods .c-carousel-trigger-previous:hover { background-position:-28px -380px; }
+        .carousel-goods .c-carousel-trigger-previous:active { background-position:-56px -380px; }
+        .carousel-goods .switchable-first,
+        .carousel-goods .switchable-first:hover,
+        .carousel-goods .switchable-first:active { cursor:default;background-position:-84px -380px; }
+        .carousel-goods .c-carousel-trigger-next { right:-8px;background-image:url("//a.vpimg2.com/upload/upimg2/error-page/sprites-404-20171009.png?20161215");background-position:-112px -380px; }
+        .carousel-goods .c-carousel-trigger-next:hover { background-position:-140px -380px; }
+        .carousel-goods .c-carousel-trigger-next:active { background-position:-168px -380px; }
+        .carousel-goods .switchable-last,
+        .carousel-goods .switchable-last:hover,
+        .carousel-goods .switchable-last:active { cursor:default;background-position:-196px -380px; }
+        .carousel-goods .c-carousel-container { margin-right:auto;margin-left:auto;width:924px;height: 255px; }
+        .carousel-goods .c-carousel-panel { height:255px;overflow:hidden; }
+        .carousel-goods .c-carousel-item { display:inline;float:left;padding-right:7px;padding-left:7px; }
+        .has-goods-carousel-brands .c-carousel-container,
+        .has-goods-carousel-brands .c-carousel-panel { height:440px; }
+        .has-goods-carousel-brands .c-carousel-item { margin-bottom:30px; }
+        .has-goods-carousel-brands .c-carousel-trigger-previous,
+        .has-goods-carousel-brands .c-carousel-trigger-next { top:192px; }
+        .c-brands-carousel-info { padding-top:10px;height:24px;overflow:hidden; }
+        .c-brands-carousel-title { text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:190px;color:#333;font-weight:400;line-height:24px; }
+        .c-brands-carousel-discount { display:inline;float:right;color:#333; }
+        .c-brands-carousel-discount .salebg2 { margin-right:3px;color:#f10180;font-size:16px; }
+    </style>
+
+    <script src="//s2.vipstatic.com/js/public/jquery.js?20161215" type="text/javascript"></script>
+    <script src="//s2.vipstatic.com/js/public/core3.js?20161215" type="text/javascript"></script>
+</head>
+<body>
+    <script type="text/javascript" src="//common.vip.com/?type=header&jq=0&core=0"></script>
+
+    <div class="c-error">
+        <div class="c-error-img"></div>
+        <div class="c-error-explain">
+            <h2 class="c-error-title">抱歉，页面无法显示</h2>
+            <p class="c-error-text">网址错误：可能网址拼写错误<br>网址失效：可能活动已下线，页面已删除</p>
+            <div>
+                <a class="c-error-button" href="//www.vip.com">返回&nbsp;唯品会主页</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var VIPSHOP = VIPSHOP || {};
+        VIPSHOP.staticJs = '//s2.vipstatic.com/js/public';
+    </script>
+
+    <script type="text/javascript" src="//common.vip.com/?type=footer&jq=0&core=0&loadmars=1"></script>
+</body>
+</html>

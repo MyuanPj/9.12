@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+
+.w {
+    width: 1015px;
+    margin: 0 auto;
+    /* background-color: pink; */
+    /* height: 40px; */
+}
+.clearfix:after {
+    content: '.';
+    display: block;
+    height: 0 ;
+    clear: both;
+    visibility:  hidden;
+}
+.clearfix {
+    *zoom: 1;
+}
+.top{
+    width: 100%;
+    height: 45px;
+    /* background-color:skyblue; */
+    margin-top: 60px;
+}
+.w .logo  {
+    width: 113px;
+    height: 32px;
+    float: left;
+    cursor: pointer;
+    /* margin-top:4px; */
+}
+
+#top-ul li{
+    float: left;
+    font-size: 16px;
+    color: #595757;
+    line-height: 32px;
+    margin-left: 13px;
+    letter-spacing: 6px;
+}
+#top-ul .top-li {
+    margin-left: 18px;
+}
+.top-right li {
+     float: right;
+     line-height: 32px;
+     margin-left: 20px;
+} 
+.top-right li img {
+    vertical-align: top;
+}
+.top-right li span {
+    display: inline-block;
+    line-height: 32px;
+    color:#4D4D4D;
+    font-size: 17px;
+    margin-left: 3px;
+}
+
+#banner {
+    height: 415px;
+    display: inline-block;
+    float: left;
+}
+img.banner-in {
+    display: inline-block;
+    margin-left: 62px;
+}
+.banner-in-2   {
+    width:274px;
+    float: right;
+    padding-right: 110px;
+}
+.mid  {
+    margin-top: 90px;
+}
+.banner-in-2-title {
+    font-size: 14px;
+    font-weight: 700;
+}
+/* .text {
+
+} */
+
+.banner-in-2 input {
+    outline: none;
+    border: none;
+    width: 274px;
+    height: 36px;
+    line-height: 36px;
+    box-sizing: border-box;
+    border: 1px solid #cdcdcd;
+    padding-left: 10px;
+    border-radius: 4px;
+    margin-top: 25px;
+}
+.button-submit {
+    margin-top: 25px;
+}
+.button-submit a {
+    display: block;
+    width: 140px;
+    height: 40px;
+    background:#F10180;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+.other-fn {
+    margin-top: 25px;
+}
+.other-fn label {
+    font-size: 12px;
+    color:#333333;
+}
+.check-box  b{
+    width: 19px;
+    height: 16px;
+    background: url(image/sprite.png) no-repeat -24px 0px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.zhuce {
+    float: right;
+}
+.zhuce  a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #666;
+}
+.zhuce a:nth-child(1):hover {
+    color: #F10180;
+}
+.zhuce a:nth-child(2) {
+    color: #F10180;
+}
+.hezuo {
+    margin-top: 50px;
+    font-size: 12px;
+    color: #666;
+    /* position: relative; */
+}
+.hezuo p>a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(image/sprite_1.png) no-repeat -151px -57px;
+    float: left;
+    margin-right: 10px;
+}
+
+.hezuo-ico {
+    margin-top: 10px;
+    line-height: 24px;
+}
+
+/* ===========================添加 */
+.hezuo .weibo  {
+    background-position: -291px -57px;
+}
+.hezuo .weibo:hover  {
+    background-position: -263px -57px;
+}
+.hezuo .qq {
+    background-position: -235px -57px;
+}
+.hezuo .qq:hover {
+    background-position: -347px -57px;
+}
+.hezuo .zhifu {
+    background-position: -179px -57px;
+}
+.hezuo .zhifu:hover {
+    background-position: -151px -57px;
+}
+.hezuo .weixin {
+    background-position: -207px -57px;
+}
+.hezuo .weixin:hover {
+    background-position: -319px -57px;
+}
+.bottom {
+    text-align: center;
+    color:#8E708C;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    font-size: 12px;
+}
+.more a {
+    text-decoration: none;
+    color: #666;
+    display: inline-block;
+    height: 24px;
+    position: relative;
+}
+.sj{
+    display: inline-block;
+    font-size: 0;
+    height: 0;
+    overflow: hidden;
+    border-width: 4px;
+    border-style: solid dashed dashed dashed;
+    border-color: #666 transparent transparent transparent;
+    vertical-align: -2px;
+    margin-left: 2px;
+}
+    
+.more{
+    display: block;
+}
+#div-h{
+    margin: 20px -13px 0;
+    width: 325px;
+    display: none;
+   
+} 
+#div-h a{
+    display: inline-block;
+    width: 66px;
+    margin-bottom: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #666;
+    /* font-size: 12px; */
+    white-space: nowrap;
+  
+}
+#div-h a:hover {
+    color: #F10180;
+}
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>剩余 0天 10小时 48分 28秒</p>
+</body>
+<script>
+    //获取当前时间
+    var now = new Date();
+    //结束时间
+    var end = new Date(2017,9,18);
+    //计算时间差 
+    var dvalue = end-now;
+    console.log(dvalue);
+    // console.log(now);
+    //时间变为秒
+    dvalue = dvalue/1000;
+    if(dvalue>0){
+        var d =Math.floor(dvalue/60/60/24);
+        var h = Math.floor(dvalue/60/60%24);
+        var minute = Math.floor(dvalue/60%60);
+        var second = Math.floor(dvalue%60);
+    }
+    d=d<10 ? "0"+d : d ;
+    h=h<10 ? "0"+h : h;
+    minute=minute<10 ? "0"+minute : minute;
+    second=second<10 ? "0"+second : second;
+    var p = document.getElementsByTagName("p");
+    p.innerHTML ='剩余'+d+' 天 '+h+'小时'+minute+'分'+second+'秒';
+    console.log(p);
+</script>
+</html>

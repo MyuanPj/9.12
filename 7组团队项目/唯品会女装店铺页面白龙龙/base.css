@@ -1,0 +1,50 @@
+/* 初始化样式 */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,
+ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+input,
+textarea {
+    outline: none;
+    border: none;
+}
+img,
+input,
+textarea {
+    vertical-align: bottom;
+}
+/* 左右浮动类 */
+.fl {
+    float: left;
+}
+.fr {
+    float: right; 
+}
+/* 版心 */
+.w {
+    width: 1000px;
+    margin: 0 auto;
+}
+/* 清除浮动 */
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+} 

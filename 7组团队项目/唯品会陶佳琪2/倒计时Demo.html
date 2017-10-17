@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 330px;
+				height: 60px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<span id="time-y"></span>
+			<span id="time-mo"></span>
+			<span id="time-d"></span><br />
+			<span id="time-h"></span>
+			<span id="time-m"></span>
+			<span id="time-s"></span>
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		//		function getDownTime(){
+		//			var willTime = new Date('2017-11-06 00:00:00');
+		//		var nowTime = new Date();
+		//		var t = willTime.getTime() - nowTime.getTime();
+		//
+		//		if(t>0){
+		//			var d =  Math.floor(t/1000/60/60/24);
+		//			var h =  Math.floor(t/1000/60/60%24);
+		//			var m =  Math.floor(t/1000/60%60);
+		//			var s =  Math.floor(t/1000%60);
+		//			var ms = Math.floor(t%1000/100);
+		//		}
+		//			 
+		//          h = h < 10 ? '0' + h : h;
+		//          m = m < 10 ? '0' + m : m;
+		//          s = s < 10 ? '0' + s : s;
+		//
+		//		var timeD = document.getElementById('time-d');
+		//		var timeH = document.getElementById('time-h');
+		//		var timeM = document.getElementById('time-m');
+		//		var timeS = document.getElementById('time-s');
+		//		var timeMs = document.getElementById('time-ms');
+		//		timeD.innerHTML = '距离开始抢购还有：'+d+'天';
+		//		timeH.innerHTML = h+'时';
+		//		timeM.innerHTML = m+'分';
+		//		timeS.innerHTML = s+'秒';
+		//		timeMs.innerHTML = '.'+ms;
+		//		}
+		//
+		//		setInterval(function(){
+		//			getDownTime();
+		//		},1);
+
+		//显示时间
+		function getUpTime() {
+			var date = new Date();
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			var day = date.getDate();
+			var hour = date.getHours();
+			var minute = date.getMinutes();
+			var second = date.getSeconds();
+
+			month = month >= 10 ? month : '0' + month;
+			day = day >= 10 ? day : '0' + day;
+			hour = hour >= 10 ? hour : '0' + hour;
+			minute = minute >= 10 ? minute : '0' + minute;
+			second = second >= 10 ? second : '0' + second;
+			
+			var timeD = document.getElementById('time-d');
+			var timeH = document.getElementById('time-h');
+			var timeM = document.getElementById('time-m');
+			var timeS = document.getElementById('time-s');
+			var timeMo = document.getElementById('time-mo');
+			var timeY = document.getElementById('time-y');
+
+			timeY.innerHTML = year + ':';
+			timeMo.innerHTML = month + ':'
+			timeD.innerHTML = day;
+			timeH.innerHTML = hour + ':';
+			timeM.innerHTML = minute + ':';
+			timeS.innerHTML = second;
+		}
+		setInterval(function() {
+			getUpTime();
+		}, 1000)
+
+	
+	</script>
+
+</html>
